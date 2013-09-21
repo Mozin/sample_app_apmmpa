@@ -16,12 +16,8 @@
 //= require_tree .
 
 $(function() {
-  var faye = new Faye.Client('http://limitless-atoll-2591.herokuapp.com/faye');
-});
-
-$(function() {
-  var faye = new Faye.Client('http://limitless-atoll-2591.herokuapp.com/faye');
-  faye.subscribe('/postsofmafiagame/new', function (data) {
+  var faye = new Faye.Client('http://limitless-mountain-5940.herokuapp.com/faye');
+  faye.subscribe('/messages/new', function (data) {
     eval(data);
   });
 });

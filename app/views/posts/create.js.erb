@@ -1,4 +1,4 @@
-<% broadcast "/postsofmafiagame/new" do %>
+<% broadcast "/messages/new" do %>
   <% if @post.place=="mafia_post" %>
     $("#chat_mafia").append("<%= escape_javascript render(@post) %>");
   <% end %>
