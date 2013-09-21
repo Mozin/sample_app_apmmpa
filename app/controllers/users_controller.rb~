@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         user.save
       else
         user.fake_name=fake_names.sample
-        fake_names.delete(f
+        fake_names.delete(user.fake_name)
         user.save
       end
     end
