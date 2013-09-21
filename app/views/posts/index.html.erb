@@ -1,0 +1,57 @@
+<% if signed_in? %>	
+  <ul id="chat">
+  <% @posts.each do |post|%>
+  <% if post.place=="game_post" %>
+  <li>
+    <%= post.user.name %>
+    <%= post.content %>
+    </li>
+  <% end %>
+  <% end %>
+
+  </ul>
+
+
+<%= form_for @post,:remote=>true,:url=> {:action=> :create} do |f| %>
+  <div class="field">
+    <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." %>
+  </div>
+  <div id="game_post">
+  <script>
+  function myFunction()
+  {
+    document.getElementById("game_post").innerHTML='<%= f.hidden_field :place, :value=> "game_post"  %>';
+  }
+  </script>    
+  </div>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myFunction();' %>
+<% end %>
+
+<h1>Mafia Post </h1>
+  <ul id="chat_mafia">
+  <% @posts.each do |post|%>
+  <% if post.place=="mafia_post" %>
+  <li>
+    <%= post.user.name %>
+    <%= post.content %>
+    </li>
+  <% end %>
+  <% end %>
+
+  </ul>
+<%= form_for @post,:remote=>true,:class=>"mafia_chat",:url=> {:action=> :create} do |f| %>
+  <div class="field">
+    <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_mafia_post"%>
+  </div>
+  <div id="mafia_post">
+  <script>
+  function myMafiaFunction()
+  {
+    document.getElementById("mafia_post").innerHTML='<%= f.hidden_field :place, :value=> "mafia_post"  %>';
+  }
+  </script>
+  </div>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myMafiaFunction();' %>
+<% end %>
+<% end %>
+

@@ -1,0 +1,13 @@
+<% broadcast "/messages/new" do %>
+  <% if @post.place=="mafia_post" %>
+    $("#chat_mafia").append("<%= escape_javascript render(@post) %>");
+  <% end %>
+  <% else %>
+    $("#chat").append("<%= escape_javascript render(@post) %>");
+  <% end %>
+  <% if @post.place=="before_game_post" %>
+    $("#chat_before_game").append("<%= escape_javascript render(@post) %>");
+  <% end %>
+<% end %>
+$("#new_post")[0].reset();
+

@@ -1,0 +1,5 @@
+ <li>
+    <%= post.user.name %>
+    <%= post.content %>
+    <%= post.place %>
+</li>

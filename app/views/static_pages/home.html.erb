@@ -1,0 +1,19 @@
+<% provide(:title, 'Home')%>
+<% if signed_in? %>
+<div class="center hero-unit">
+<h1>Welcome to the Mafia</h1>
+<h2>This is the home page</h2>
+<% if current_user.game_join_status? %>
+<%= link_to "Continue the game", intermediate_path, :class=> "btn btn-large btn-primary" %>
+<% else %>
+<%= link_to "Start Playing!", change_join_status_user_path(current_user),:method=> :put, :class=> "btn btn-large btn-primary" %>
+<% end %>
+</div>
+<% else %>
+<div class="center hero-unit">
+<h1>Welcome to the Mafia</h1>
+<h2>This is the home page</h2>
+<%= link_to "Sign Up now!", signup_path, :class=> "btn btn-large btn-primary" %>
+</div>
+
+<% end %>

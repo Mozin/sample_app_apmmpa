@@ -1,0 +1,6 @@
+<%= form_for Post.new ,:remote=>true do |f| %>
+    <%= f.text_area :content, :placeholder=> "compose new post..." %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary" %>
+<% end %>
+
+<%= subscribe_to "/posts/new" %>

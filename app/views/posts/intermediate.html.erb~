@@ -1,0 +1,38 @@
+<% if signed_in? %>	
+<ul id="users">
+<% @users.each do |user|%>
+ <% if user.game_join_status? %> 
+    <%= render user %>
+  <% end %>
+<% end %>
+
+</ul>
+<h1>Before Game Discussion</h1>
+<ul id="chat_before_game">
+  <% @posts.each do |post|%>
+  <% if post.place=="before_game_post" %>
+  <li>
+    <%= post.user.name %>
+    <%= post.content %>
+    </li>
+  <% end %>
+  <% end %>
+
+  </ul>
+
+<%= form_for @post,:remote=>true,:url=> {:action=> :create} do |f| %>
+  <div class="field">
+    <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." %>
+  </div>
+  <div id="before_game_post">
+  <script>
+  function myBeforeGameFunction()
+  {
+    document.getElementById("before_game_post").innerHTML='<%= f.hidden_field :place, :value=> "before_game_post"  %>';
+  }
+  </script>    
+  </div>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myBeforeGameFunction();' %>
+<% end %>
+
+<% end %>

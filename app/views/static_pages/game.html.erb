@@ -1,0 +1,12 @@
+<% if signed_in? %>	
+  <ul class="posts">
+  <% @posts.each do |post|%>
+  <li>
+    <span class="user"><%= post.user.name %></span>
+    <span class="content"><%= post.content %></span>
+    <span class="timestamp">Posted <%= time_ago_in_words(post.created_at) %> ago.</span>
+    </li>
+  <% end %>
+  </ul>
+  <%= render 'shared/post_form' %>
+<% end %>

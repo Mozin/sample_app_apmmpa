@@ -1,0 +1,16 @@
+require 'spec_helper'
+
+describe StaticPagesController do
+
+  describe "Contact Page" do
+    it "should have h1 contact" do
+      visit '/static_pages/contact'
+      page.body.should have_content('<h1>Contact</h1>')
+    end
+    
+    it "should have the title 'Contact'" do
+      visit '/static_pages/contact'
+      page.should have_selector('title',:text=> "Sample App | Contact")
+    end
+  end
+end

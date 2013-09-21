@@ -1,0 +1,4 @@
+<li>
+    <%= post.user.name %>
+    <%= post.content %>
+</li>

@@ -1,0 +1,7 @@
+module PostsHelper
+
+  def change_live_status
+    user=User.find(parama[:id])
+    user.live_status=false
+  end
+end
