@@ -16,12 +16,12 @@
 //= require_tree .
 
 $(function() {
-  var faye = new Faye.Client('http://fayeredis.herokuapp.com/faye');
+  var faye = new Faye.Client(' http://arcane-bastion-7112.herokuapp.com/faye');
 });
 
 $(function() {
-  var faye = new Faye.Client('http://fayeredis.herokuapp.com/faye');
-  faye.subscribe('/messages/new', function (data) {
+  var faye = new Faye.Client(' http://arcane-bastion-7112.herokuapp.com/faye');
+  faye.subscribe('/postsofmafiagame/new', function (data) {
     eval(data);
   });
 });
