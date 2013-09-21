@@ -16,7 +16,7 @@
   <div class="field">
     <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." %>
   </div>
-  <div id="game_post">
+  <div id="mafia_mohsin_akshay_gavit_game_post">
   <script>
   function myFunction()
   {
@@ -39,7 +39,7 @@
   <% end %>
 
   </ul>
-<%= form_for @post,:remote=>true,:url=> {:action=> :create} do |f| %>
+<%= form_for @post,:remote=>true,:class=>"mafia_chat",:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_mafia_post"%>
   </div>

@@ -7,6 +7,22 @@ class UsersController < ApplicationController
     @user=User.new
   end
   
+  def allocate
+    n=User.count
+    fake_names='Wolverine ProfessorX Rogue JeanGrey Cyclops Storm Iceman  Magneto Mystique Stryker Pyro Electro Deadpool Sabertooth Juggernaut Beast Bolt Gambit Frost Zero'.split
+    @users=User.all
+    @users.each do |user|
+      if user.admin?
+        user.fake_name="Moderator"
+        user.save
+      else
+        user.fake_name=fake_names.sample
+        fake_names.delete(user.fake_name)
+        user.save
+      end
+    end
+  end
+    
   def create 
     @user=User.new(params[:user])
     if @user.save

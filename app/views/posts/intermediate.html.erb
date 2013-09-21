@@ -8,7 +8,7 @@
 
 </ul>
 <h1>Before Game Discussion</h1>
-<ul id="chat_before_game">
+<ul id="mafia_mohsin_akshay_gavit_chat_before_game">
   <% @posts.each do |post|%>
   <% if post.place=="before_game_post" %>
   <li>
@@ -36,7 +36,7 @@
 <% end %>
 
 <% if current_user.admin?%>
-  hello admin
+  <%=link_to "Allocate Users", allocate_user_path, :class=> "btn btn-large btn-primary" %>
 <% end %>
 
 <% end %>
