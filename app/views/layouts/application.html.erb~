@@ -4,7 +4,7 @@
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "http://fayeredis.herokuapp.com/faye.js" %>
+  <%= javascript_include_tag "http://arcane-bastion-7112.herokuapp.com/faye.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
