@@ -21,7 +21,7 @@ $(function() {
 
 $(function() {
   var faye = new Faye.Client('http://fayeredis.herokuapp.com/faye');
-  faye.subscribe('/messages/new', function (data) {
+  faye.subscribe('/postsofmafiagame/new', function (data) {
     eval(data);
   });
 });
