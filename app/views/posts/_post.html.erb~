@@ -1,5 +1,5 @@
  <li>
-    <%= post.user.name %>
+   <% if post.user.fake_name %>
+    <%= post.user.fake_name %>
     <%= post.content %>
-    <%= post.place %>
 </li>
