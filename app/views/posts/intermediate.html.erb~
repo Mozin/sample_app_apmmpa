@@ -36,7 +36,7 @@
 <% end %>
 
 <% if current_user.admin?%>
-  <%=link_to "Allocate Users", allocate_users, :class=> "btn btn-large btn-primary" %>
+  <%=link_to "Allocate Users", allocate_user_path, :class=> "btn btn-large btn-primary" %>
 <% end %>
 
 <% end %>

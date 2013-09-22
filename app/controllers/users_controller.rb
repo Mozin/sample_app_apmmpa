@@ -20,9 +20,9 @@ class UsersController < ApplicationController
         fake_names.delete(user.fake_name)
         user.save
       end
-      sign_in current_user
-      redirect_to posts_path
     end
+   sign_in current_user
+   redirect_to posts_path
   end
     
   def create 
