@@ -28,7 +28,7 @@
 <% end %>
 
 <h1>Mafia Post </h1>
-  <ul id="chat_mafia">
+  <ul id="mafia_mohsin_akshay_gavit_chat_mafia">
   <% @posts.each do |post|%>
   <% if post.place=="mafia_post" %>
   <li>

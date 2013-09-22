@@ -1,5 +1,5 @@
 <% if signed_in? %>	
-  <ul id="chat">
+  <ul id="mafia_mohsin_akshay_gavit_chat">
   <% @posts.each do |post|%>
   <% if post.place=="game_post" %>
   <li>
@@ -16,7 +16,7 @@
   <div class="field">
     <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." %>
   </div>
-  <div id="mafia_mohsin_akshay_gavit_game_post">
+  <div id="game_post">
   <script>
   function myFunction()
   {
@@ -28,7 +28,7 @@
 <% end %>
 
 <h1>Mafia Post </h1>
-  <ul id="chat_mafia">
+  <ul id="mafia_mohsin_akshay_gavit_chat_mafia">
   <% @posts.each do |post|%>
   <% if post.place=="mafia_post" %>
   <li>
@@ -43,7 +43,7 @@
   <div class="field">
     <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_mafia_post"%>
   </div>
-  <div id="mafia_mohsin_akshay_gavit_mafia_post">
+  <div id="mafia_post">
   <script>
   function myMafiaFunction()
   {

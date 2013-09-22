@@ -2,10 +2,10 @@
   <% if @post.place=="mafia_post" %>
     $("#mafia_mohsin_akshay_gavit_chat_mafia").append("<%= escape_javascript render(@post) %>");
   <% end %>
-  <% if @post.place=="mafia_mohsin_akshay_gavit_game_post" %>
+  <% if @post.place=="game_post" %>
     $("#mafia_mohsin_akshay_gavit_chat").append("<%= escape_javascript render(@post) %>");
   <% end %>
-  <% if @post.place=="mafia_mohsin_akshay_gavit_before_game_post" %>
+  <% if @post.place=="before_game_post" %>
     $("#mafia_mohsin_akshay_gavit_chat_before_game").append("<%= escape_javascript render(@post) %>");
   <% end %>
 <% end %>
