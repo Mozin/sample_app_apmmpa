@@ -10,18 +10,18 @@ class UsersController < ApplicationController
   def allocate
     n=User.count
     fake_names='Wolverine ProfessorX Rogue JeanGrey Cyclops Storm Iceman  Magneto Mystique Stryker Pyro Electro Deadpool Sabertooth Juggernaut Beast Bolt Gambit Frost Zero'.split
+    game_characters='Mafia Don Villager Police Doctor'.split
     @users=User.all
     @users.each do |user|
       if user.admin?
-        user.fake_name="Moderator"
-        user.save
+        user.update_attribute('fake_name','Moderator')
+        user.update_attribute('game_character','Moderator')
       else
-        user.fake_name=fake_names.sample
-        fake_names.delete(user.fake_name)
-        user.save
+        user.update_attribute('fake_name',fake_names.sample)
+        user.update_attribute('game_character',game_characters.sample)
       end
     end
-   sign_in current_user
+   sign_in User.find(params[:id])
    redirect_to posts_path
   end
     

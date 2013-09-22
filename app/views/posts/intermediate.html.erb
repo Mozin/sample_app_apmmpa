@@ -5,6 +5,8 @@
     <%= render user %>
   <% end %>
 <% end %>
+<%= current_user.fake_name %>
+<%= current_user.game_character %>
 
 </ul>
 <h1>Before Game Discussion</h1>
@@ -20,7 +22,7 @@
 
   </ul>
 
-<%= form_for @post,:remote=>true,:url=> {:action=> :create} do |f| %>
+<%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_before_game_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." %>
   </div>
@@ -35,8 +37,8 @@
   <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myBeforeGameFunction();' %>
 <% end %>
 
-<% if current_user.admin?%>
-  <%=link_to "Allocate Users", allocate_user_path,:method=> :put,:confirm=> "You sure?", :class=> "btn btn-large btn-primary" %>
+<% if current_user.admin? && !current_user.fake_name %>
+  <%=link_to "Allocate Users", allocate_user_path(current_user),:method=> :put,:confirm=> "You sure?", :class=> "btn btn-large btn-primary" %>
 <% end %>
 
 <% end %>

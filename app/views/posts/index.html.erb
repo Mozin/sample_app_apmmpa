@@ -12,7 +12,7 @@
   </ul>
 
 
-<%= form_for @post,:remote=>true,:url=> {:action=> :create} do |f| %>
+<%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_game_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." %>
   </div>
@@ -27,6 +27,7 @@
   <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myFunction();' %>
 <% end %>
 
+<% if current_user.admin? || current_user.game_character=="mafia" %>
 <h1>Mafia Post </h1>
   <ul id="mafia_mohsin_akshay_gavit_chat_mafia">
   <% @posts.each do |post|%>
@@ -39,7 +40,7 @@
   <% end %>
 
   </ul>
-<%= form_for @post,:remote=>true,:class=>"mafia_chat",:url=> {:action=> :create} do |f| %>
+<%= form_for @post,:remote=>true,:class=>"mafia_chat",:html => { :id => "mafia_mohsin_akshay_gavit_mafia_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_mafia_post"%>
   </div>
@@ -55,3 +56,94 @@
 <% end %>
 <% end %>
 
+<% if current_user.admin? || current_user.game_character=="Don" %>
+<h1>Don Post </h1>
+  <ul id="mafia_mohsin_akshay_gavit_chat_don">
+  <% @posts.each do |post|%>
+  <% if post.place=="don_post" %>
+  <li>
+    <%= post.user.name %>
+    <%= post.content %>
+    </li>
+  <% end %>
+  <% end %>
+
+  </ul>
+<%= form_for @post,:remote=>true,:class=>"don_chat",:html => { :id => "mafia_mohsin_akshay_gavit_don_form" },:url=> {:action=> :create} do |f| %>
+  <div class="field">
+    <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_don_post"%>
+  </div>
+  <div id="don_post">
+  <script>
+  function myDonFunction()
+  {
+    document.getElementById("don_post").innerHTML='<%= f.hidden_field :place, :value=> "don_post"  %>';
+  }
+  </script>
+  </div>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDonFunction();' %>
+<% end %>
+<% end %>
+
+
+<% if current_user.admin? || current_user.game_character=="Doctor" %>
+<h1>Doctor Post </h1>
+  <ul id="mafia_mohsin_akshay_gavit_chat_doctor">
+  <% @posts.each do |post|%>
+  <% if post.place=="doctor_post" %>
+  <li>
+    <%= post.user.name %>
+    <%= post.content %>
+    </li>
+  <% end %>
+  <% end %>
+
+  </ul>
+<%= form_for @post,:remote=>true,:class=>"doctor_chat",:html => { :id => "mafia_mohsin_akshay_gavit_doctor_form" },:url=> {:action=> :create} do |f| %>
+  <div class="field">
+    <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_doctor_post"%>
+  </div>
+  <div id="doctor_post">
+  <script>
+  function myDoctorFunction()
+  {
+    document.getElementById("doctor_post").innerHTML='<%= f.hidden_field :place, :value=> "doctor_post"  %>';
+  }
+  </script>
+  </div>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();' %>
+<% end %>
+<% end %>
+
+
+<% if current_user.admin? || current_user.game_character=="Police" %>
+<h1>Police Post </h1>
+  <ul id="mafia_mohsin_akshay_gavit_chat_police">
+  <% @posts.each do |post|%>
+  <% if post.place=="police_post" %>
+  <li>
+    <%= post.user.name %>
+    <%= post.content %>
+    </li>
+  <% end %>
+  <% end %>
+
+  </ul>
+<%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_police_form" },:url=> {:action=> :create} do |f| %>
+  <div class="field">
+    <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_police_post"%>
+  </div>
+  <div id="police_post">
+  <script>
+  function myPoliceFunction()
+  {
+    document.getElementById("police_post").innerHTML='<%= f.hidden_field :place, :value=> "police_post"  %>';
+  }
+  </script>
+  </div>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();' %>
+<% end %>
+<% end %>
+
+
+<% end %>

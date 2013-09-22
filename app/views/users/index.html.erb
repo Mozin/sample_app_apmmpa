@@ -6,8 +6,10 @@ All users
 <% @users.each do |user|%>
   <li>
   <%= link_to user.name ,user %>
+   <%= user.fake_name %>
+   <%= user.game_character %>
   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete",user,:method=>:delete,:confirm=> "You sure?" %> | 
+   | <%= link_to "delete",user,:method=>:delete,:confirm=> "You sure?" %> | 
     <% if user.live_status? %>
       <%= link_to "kill",change_user_path(user) ,:method=> :put,:confirm=> "You sure?" %>
     <% end %>

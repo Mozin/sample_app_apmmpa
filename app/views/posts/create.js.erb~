@@ -1,13 +1,24 @@
 <% broadcast "/messages/new" do %>
   <% if @post.place=="mafia_post" %>
     $("#mafia_mohsin_akshay_gavit_chat_mafia").append("<%= escape_javascript render(@post) %>");
+    $("#mafia_mohsin_akshay_gavit_mafia_form")[0].reset();
   <% end %>
   <% if @post.place=="game_post" %>
     $("#mafia_mohsin_akshay_gavit_chat").append("<%= escape_javascript render(@post) %>");
+    $("#mafia_mohsin_akshay_gavit_game_form")[0].reset();
   <% end %>
-  <% if @post.place=="mafia_mohsin_akshay_gavit_before_game_post" %>
+  <% if @post.place=="before_game_post" %>
     $("#mafia_mohsin_akshay_gavit_chat_before_game").append("<%= escape_javascript render(@post) %>");
+    $("#mafia_mohsin_akshay_gavit_before_game_form")[0].reset();
   <% end %>
+  <% if @post.place=="don_post" %>
+    $("#mafia_mohsin_akshay_gavit_chat_don").append("<%= escape_javascript render(@post) %>");
+    $("#mafia_mohsin_akshay_gavit_don_form")[0].reset();
+  <% end %>
+    <% if @post.place=="doctor_post" %>
+    $("#mafia_mohsin_akshay_gavit_chat_doctor").append("<%= escape_javascript render(@post) %>");
+    $("#mafia_mohsin_akshay_gavit_doctor_form")[0].reset();
+  <% end %>
+
 <% end %>
-$("#new_post")[0].reset();
 

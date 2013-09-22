@@ -6,9 +6,13 @@ class PostsController < ApplicationController
   end
   
   def intermediate
-    @posts=posts
-    @users=User.all
-    @post= current_user.posts.build
+    if signed_in?
+      @posts=posts
+      @users=User.all
+      @post= current_user.posts.build
+    else
+      redirect_to signin_path
+    end
   end
   
   def index
