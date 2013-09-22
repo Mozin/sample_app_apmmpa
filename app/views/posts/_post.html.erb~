@@ -1,5 +1,8 @@
  <li>
    <% if post.user.fake_name %>
-    <%= post.user.fake_name %>
+     <%= post.user.fake_name %>
+   <% else %>
+     <%= post.user.name %>
     <%= post.content %>
+   <% end %>
 </li>
