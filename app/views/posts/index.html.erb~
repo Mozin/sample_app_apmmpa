@@ -116,7 +116,7 @@
       $('#new_doctor_post').keypress(function(e){
         if(e.which == 13){
            // submit via ajax or
-           $('mafia_mohsin_akshay_gavit_doctor_form').submit();
+           $('mafia_mohsin_akshay_gavit_doctor_form_submit').click();
        }
     });
   });
