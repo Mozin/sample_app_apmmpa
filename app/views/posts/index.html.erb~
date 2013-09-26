@@ -111,7 +111,7 @@
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();' %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();',:style=> "display:none" %>
 <% end %>
 <% end %>
 
@@ -141,7 +141,7 @@
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();' ,:style=> "display:none" %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();'  %>
 <% end %>
 <% end %>
 
