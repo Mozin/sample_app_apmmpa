@@ -78,8 +78,8 @@
   function myDonFunction()
   {
     document.getElementById("don_post").innerHTML='<%= f.hidden_field :place, :value=> "don_post"  %>';
-  </script>
   }
+  </script>
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDonFunction();' %>
 <% end %>
@@ -111,18 +111,7 @@
   }
   </script>
   </div>
-    <script type="text/javascript">
-    $(document).ready(function(){
-      $('#new_doctor_post').keypress(function(e){
-        if(e.which == 13){
-           // submit via ajax or
-           $('mafia_mohsin_akshay_gavit_doctor_form_submit').click();
-       }
-    });
-  });
-  </script>
-
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();', :id => "mafia_mohsin_akshay_gavit_doctor_form_submit" %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();' %>
 <% end %>
 <% end %>
 
@@ -152,7 +141,7 @@
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();'  %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();' %>
 <% end %>
 <% end %>
 
