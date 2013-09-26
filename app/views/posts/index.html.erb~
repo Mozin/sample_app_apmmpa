@@ -3,7 +3,7 @@
   <% @posts.each do |post|%>
   <% if post.place=="game_post" %>
   <li>
-    <%= post.user.name %>
+    <%= post.user.fake_name %>
     <%= post.content %>
     </li>
   <% end %>
@@ -33,7 +33,7 @@
   <% @posts.each do |post|%>
   <% if post.place=="mafia_post" %>
   <li>
-    <%= post.user.name %>
+    <%= post.user.fake_name %>
     <%= post.content %>
     </li>
   <% end %>
@@ -62,7 +62,7 @@
   <% @posts.each do |post|%>
   <% if post.place=="don_post" %>
   <li>
-    <%= post.user.name %>
+    <%= post.user.fake_name %>
     <%= post.content %>
     </li>
   <% end %>
@@ -92,7 +92,7 @@
   <% @posts.each do |post|%>
   <% if post.place=="doctor_post" %>
   <li>
-    <%= post.user.name %>
+    <%= post.user.fake_name %>
     <%= post.content %>
     </li>
   <% end %>
@@ -122,7 +122,7 @@
   <% @posts.each do |post|%>
   <% if post.place=="police_post" %>
   <li>
-    <%= post.user.name %>
+    <%= post.user.fake_name %>
     <%= post.content %>
     </li>
   <% end %>
@@ -141,7 +141,7 @@
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();' %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();' ,:style=> "display:none" %>
 <% end %>
 <% end %>
 

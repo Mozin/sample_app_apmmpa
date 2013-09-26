@@ -19,7 +19,7 @@
     $("#mafia_mohsin_akshay_gavit_chat_doctor").append("<%= escape_javascript render(@post) %>");
     $("#mafia_mohsin_akshay_gavit_doctor_form")[0].reset();
   <% end %>
-  <% if @post.place=="doctor_post" %>
+  <% if @post.place=="police_post" %>
     $("#mafia_mohsin_akshay_gavit_chat_police").append("<%= escape_javascript render(@post) %>");
     $("#mafia_mohsin_akshay_gavit_police_form")[0].reset();
   <% end %>
