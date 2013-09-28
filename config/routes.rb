@@ -18,6 +18,11 @@ SampleApp::Application.routes.draw do
   match "/intermediate" ,:to=>'posts#intermediate'
   match "/night_mode" ,:to=>'posts#night_mode'
   match "/day_mode" ,:to=>'posts#day_mode'
+  match "/talk_mafias" ,:to=>'posts#talk_mafias'
+  match "/talk_police" ,:to=>'posts#talk_police'
+  match "/talk_don" ,:to=>'posts#talk_don'
+  match "/talk_doc" ,:to=>'posts#talk_doc'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -21,6 +21,18 @@ class PostsController < ApplicationController
   def day_mode
   end
   
+  def talk_mafias
+  end
+
+  def talk_police
+  end
+
+  def talk_don
+  end
+
+  def talk_doc
+  end
+
   def index
     if signed_in?
       @post= current_user.posts.build
