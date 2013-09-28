@@ -1,4 +1,16 @@
 <% if signed_in? %>	
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+  </script>
+<script>
+$(document).ready(function(){
+$("#new_mafia_post").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#id_of_button").click();
+    }
+});
+});
+</script>
+
   <ul id="mafia_mohsin_akshay_gavit_chat">
   <% @posts.each do |post|%>
   <% if post.place=="game_post" %>
@@ -52,7 +64,7 @@
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myMafiaFunction();' %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myMafiaFunction();',:id=> "mafia_submit_button" %>
 <% end %>
 <% end %>
 
@@ -80,7 +92,6 @@
     document.getElementById("don_post").innerHTML='<%= f.hidden_field :place, :value=> "don_post"  %>';
   }
   </script>
-  
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDonFunction();' %>
 <% end %>
@@ -112,18 +123,7 @@
   }
   </script>
   </div>
-    <script type="text/javascript">
-    $(document).ready(function(){
-      $('#new_doctor_post').keypress(function(e){
-        if(e.which == 13){
-           // submit via ajax or
-           $('mafia_mohsin_akshay_gavit_doctor_form_submit').click();
-       }
-    });
-  });
-  </script>
-
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();', :id => "mafia_mohsin_akshay_gavit_doctor_form_submit" %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();' %>
 <% end %>
 <% end %>
 
@@ -153,7 +153,7 @@
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();'  %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();' %>
 <% end %>
 <% end %>
 
