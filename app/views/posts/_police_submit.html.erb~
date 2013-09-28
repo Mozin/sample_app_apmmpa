@@ -9,13 +9,6 @@
     document.getElementById("police_post").innerHTML='<%= f.hidden_field :place, :value=> "police_post"  %>';
   }
   </script>
-  <script>
-  $("#new_police_post").keyup(function(event){
-    if(event.keyCode == 13){
-        $("#police_submit_button").click();
-    }
-  });
-  </script>
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();',:id=> "police_submit_button" %>
 <% end %>

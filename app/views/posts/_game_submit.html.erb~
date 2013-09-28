@@ -9,14 +9,6 @@
     document.getElementById("game_post").innerHTML='<%= f.hidden_field :place, :value=> "game_post"  %>';
   }
   </script>    
-  <script>
-  $("#new_game_post").keyup(function(event){
-    if(event.keyCode == 13){
-        $("#game_submit_button").click();
-    }
-  });
-  </script>
-  
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myFunction();',:id=> "game_submit_button" %>
 <% end %>

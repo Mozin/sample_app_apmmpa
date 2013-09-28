@@ -142,7 +142,6 @@ $(document).ready(function(){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myMafiaFunction();',:id=> "mafia_submit_button" %>
 <% end %>
 <% end %>
 </div>
@@ -175,7 +174,6 @@ $(document).ready(function(){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDonFunction();', :id=> "don_submit_button" %>
 <% end %>
 <% end %>
 </div>
@@ -209,7 +207,6 @@ $(document).ready(function(){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();',:id=> "doctor_submit_button" %>
 <% end %>
 <% end %>
 </div>
@@ -243,7 +240,6 @@ $(document).ready(function(){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();',:id=> "police_submit_button" %>
 <% end %>
 <% end %>
 </div>

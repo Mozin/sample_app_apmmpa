@@ -9,13 +9,6 @@
     document.getElementById("mafia_post").innerHTML='<%= f.hidden_field :place, :value=> "mafia_post"  %>';
   }
   </script>
-  <script>
-  $("#new_mafia_post").keyup(function(event){
-    if(event.keyCode == 13){
-        $("#mafia_submit_button").click();
-    }
-  });
-  </script>
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myMafiaFunction();',:id=> "mafia_submit_button" %>
 <% end %>
