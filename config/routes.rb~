@@ -3,7 +3,7 @@ SampleApp::Application.routes.draw do
   get "posts/new"
   resources :users do
     member do
-      put :change,:change_join_status
+      put :change,:change_join_status, :allocate
     end
   end
   resources :sessions ,:only=> [:new ,:create, :destroy]

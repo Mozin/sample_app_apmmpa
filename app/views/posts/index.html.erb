@@ -1,5 +1,9 @@
 <% if signed_in? %>	
-
+<div id="mafia_mohsin_akshay_gavit_mode_button">
+<% if current_user.admin? %>
+  <%=link_to "Night mode",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+<% end %>
+</div>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
   </script>
 <script>

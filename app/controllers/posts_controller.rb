@@ -15,6 +15,9 @@ class PostsController < ApplicationController
     end
   end
   
+  def night_mode
+  end
+  
   def index
     if signed_in?
       @post= current_user.posts.build

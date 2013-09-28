@@ -1,0 +1,8 @@
+<% broadcast "/messages/new" do %>
+    $("#mafia_mohsin_akshay_gavit_mode_button").html("
+    <% if current_user.admin? %>
+      <%=link_to "Day mode",night_mode_path,:confirm=> "You sure?", :class=> "btn btn-large btn-primary" %>
+    <% end %>
+    ");
+<% end %>
+

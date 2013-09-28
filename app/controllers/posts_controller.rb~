@@ -12,6 +12,13 @@ class PostsController < ApplicationController
       @post= current_user.posts.build
     else
       redirect_to signin_path
+    end
+  end
+  
+  def night_mode
+    respond_to do |format|
+      format.js
+    end
   end
   
   def index
