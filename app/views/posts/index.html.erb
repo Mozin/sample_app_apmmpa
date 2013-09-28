@@ -6,27 +6,31 @@
 </div>
 <div id="mafia_mohsin_akshay_gavit_mode_button_mafia">
 <% if current_user.admin? %>
-  <%=link_to "Talk to Mafias",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Talk to Mafias",talk_mafias_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 </div>
 
 <div id="mafia_mohsin_akshay_gavit_mode_button_police">
 <% if current_user.admin? %>
-  <%=link_to "Talk to Police",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Talk to Police",talk_police_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 </div>
 
 <div id="mafia_mohsin_akshay_gavit_mode_button_don">
 <% if current_user.admin? %>
-  <%=link_to "Talk to Don",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Talk to Don",talk_don_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 </div>
 
 <div id="mafia_mohsin_akshay_gavit_mode_button_doctor">
 <% if current_user.admin? %>
-  <%=link_to "Talk to Doctor",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Talk to Doctor",talk_doc_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 </div>
+
+<% if current_user.admin? %>
+  <%=link_to "Deactivate",deactivate_path,:confirm=> "You Really sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+<% end %>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
   </script>

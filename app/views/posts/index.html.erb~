@@ -6,27 +6,31 @@
 </div>
 <div id="mafia_mohsin_akshay_gavit_mode_button_mafia">
 <% if current_user.admin? %>
-  <%=link_to "Talk to Mafias",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Talk to Mafias",talk_mafias_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 </div>
 
 <div id="mafia_mohsin_akshay_gavit_mode_button_police">
 <% if current_user.admin? %>
-  <%=link_to "Talk to Police",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Talk to Police",talk_police_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 </div>
 
 <div id="mafia_mohsin_akshay_gavit_mode_button_don">
 <% if current_user.admin? %>
-  <%=link_to "Talk to Don",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Talk to Don",talk_don_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 </div>
 
 <div id="mafia_mohsin_akshay_gavit_mode_button_doctor">
 <% if current_user.admin? %>
-  <%=link_to "Talk to Doctor",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Talk to Doctor",talk_doc_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 </div>
+
+<% if current_user.admin? %>
+  <%=link_to "Deactivate",deactivate_mode_path,:confirm=> "You Really sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+<% end %>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
   </script>
@@ -196,6 +200,8 @@ $(document).ready(function(){
   <% end %>
 
   </ul>
+<div id="mafia_mohsin_akshay_gavit_mode_police" >  
+
 <%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_police_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_police_post"%>
@@ -208,10 +214,9 @@ $(document).ready(function(){
   }
   </script>
   </div>
-<div id="mafia_mohsin_akshay_gavit_mode_police" >  
   <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();',:id=> "police_submit_button" %>
-</div>
 <% end %>
+</div>
 <% end %>
 
 

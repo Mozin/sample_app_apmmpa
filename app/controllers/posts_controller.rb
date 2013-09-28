@@ -18,20 +18,27 @@ class PostsController < ApplicationController
   def night_mode
   end
 
+  def deactivate
+  end
+  
   def day_mode
     @post= current_user.posts.build
   end
   
   def talk_mafias
+    @post= current_user.posts.build
   end
 
   def talk_police
+    @post= current_user.posts.build
   end
 
   def talk_don
+    @post= current_user.posts.build
   end
 
   def talk_doc
+    @post= current_user.posts.build
   end
 
   def index
