@@ -50,7 +50,8 @@ class UsersController < ApplicationController
   def change
     user=User.find(params[:id])
     user.toggle!(:live_status)
-    redirect_to users_path
+    user.update_attribute('fake_name',nil)
+    redirect_to posts_path
   end
     
   def show
@@ -75,7 +76,7 @@ class UsersController < ApplicationController
     user=User.find(params[:id])
     flash[:success]="User #{user.name} destroyed"
     user.destroy
-    redirect_to users_path
+    redirect_to posts_path
   end 
   
   def kill

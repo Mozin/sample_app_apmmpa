@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @users.each do |user|
       if user.admin?
         user.update_attribute('fake_name','Moderator')
-        user.update_attribute('game_charcater','Moderator')
+        user.update_attribute('game_character','Moderator')
       else
         user.update_attribute('fake_name',fake_names.sample)
         user.update_attribute('game_character',game_characters.sample)
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   def change
     user=User.find(params[:id])
     user.toggle!(:live_status)
-    redirect_to users_path
+    redirect_to posts_path
   end
     
   def show
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
     user=User.find(params[:id])
     flash[:success]="User #{user.name} destroyed"
     user.destroy
-    redirect_to users_path
+    redirect_to posts_path
   end 
   
   def kill

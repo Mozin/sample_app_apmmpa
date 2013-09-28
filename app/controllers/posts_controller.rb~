@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     @post= current_user.posts.build
     @users=User.all
     @users.each do |user|
-      user.update_attribute('mode_status',false)    
+      user.update_attribute('mode_status',true)    
     end
   end
   

@@ -33,6 +33,26 @@
   <%=link_to "Deactivate",deactivate_path,:confirm=> "You Really sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 
+<h1>
+All users
+</h1>
+<ul class="users">
+<% @users.each do |user|%>
+  <li>
+  <%= link_to user.name ,user %>
+   <%= user.fake_name %>
+   <%= user.game_character %>
+  <% if current_user.admin? && !current_user?(user) %>
+   | <%= link_to "delete",user,:method=>:delete,:confirm=> "You sure?" %> | 
+    <% if user.live_status? %>
+      <%= link_to "kill",change_user_path(user) ,:method=> :put,:confirm=> "You sure?" %>
+    <% end %>
+  <% end %>
+  </li>
+<% end %>
+</ul>
+
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
   </script>
 <script>
@@ -122,7 +142,6 @@ $(document).ready(function(){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myMafiaFunction();',:id=> "mafia_submit_button" %>
 <% end %>
 <% end %>
 </div>
@@ -155,7 +174,6 @@ $(document).ready(function(){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDonFunction();', :id=> "don_submit_button" %>
 <% end %>
 <% end %>
 </div>
@@ -189,7 +207,6 @@ $(document).ready(function(){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();',:id=> "doctor_submit_button" %>
 <% end %>
 <% end %>
 </div>
@@ -223,7 +240,6 @@ $(document).ready(function(){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();',:id=> "police_submit_button" %>
 <% end %>
 <% end %>
 </div>
