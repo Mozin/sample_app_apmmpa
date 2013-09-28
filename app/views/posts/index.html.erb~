@@ -56,7 +56,6 @@ All users
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
   </script>
 <script>
-$(document).ready(function(){
   $("#new_mafia_post").keyup(function(event){
     if(event.keyCode == 13){
         $("#mafia_submit_button").click();
@@ -82,7 +81,6 @@ $(document).ready(function(){
         $("#police_submit_button").click();
     }
   });  
-});
 </script>
 
   <ul id="mafia_mohsin_akshay_gavit_chat">
