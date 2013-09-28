@@ -1,5 +1,5 @@
  <li>
-   <% if post.user.fake_name && current_page?(posts_path) %>
+   <% if post.user.fake_name %>
      <%= post.user.fake_name %>
    <% else %>
      <%= post.user.name %>
