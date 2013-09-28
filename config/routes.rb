@@ -17,6 +17,7 @@ SampleApp::Application.routes.draw do
   match "/signout", :to=> 'sessions#destroy',:via=> :delete
   match "/intermediate" ,:to=>'posts#intermediate'
   match "/night_mode" ,:to=>'posts#night_mode'
+  match "/day_mode" ,:to=>'posts#day_mode'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

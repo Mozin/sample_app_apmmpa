@@ -17,6 +17,9 @@ class PostsController < ApplicationController
   
   def night_mode
   end
+
+  def day_mode
+  end
   
   def index
     if signed_in?
