@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   end
 
   def day_mode
+    @post= current_user.posts.build
   end
   
   def talk_mafias

@@ -21,7 +21,16 @@ class PostsController < ApplicationController
   def day_mode
   end
   
-  def day_mode
+  def talk_mafias
+  end
+
+  def talk_police
+  end
+
+  def talk_don
+  end
+
+  def talk_doc
   end
 
   def index
