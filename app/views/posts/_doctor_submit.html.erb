@@ -1,0 +1,15 @@
+<%= form_for @post,:remote=>true,:class=>"doctor_chat",:html => { :id => "mafia_mohsin_akshay_gavit_doctor_form" },:url=> {:action=> :create} do |f| %>
+  <div class="field">
+    <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_doctor_post"%>
+  </div>
+  <div id="doctor_post">
+  <script>
+  function myDoctorFunction()
+  {
+    document.getElementById("doctor_post").innerHTML='<%= f.hidden_field :place, :value=> "doctor_post"  %>';
+  }
+  </script>
+  </div>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();',:id=> "doctor_submit_button" %>
+<% end %>
+

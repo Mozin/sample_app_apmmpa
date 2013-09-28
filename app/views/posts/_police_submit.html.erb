@@ -1,0 +1,15 @@
+<%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_police_form" },:url=> {:action=> :create} do |f| %>
+  <div class="field">
+    <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_police_post"%>
+  </div>
+  <div id="police_post">
+  <script>
+  function myPoliceFunction()
+  {
+    document.getElementById("police_post").innerHTML='<%= f.hidden_field :place, :value=> "police_post"  %>';
+  }
+  </script>
+  </div>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();',:id=> "police_submit_button" %>
+<% end %>
+
