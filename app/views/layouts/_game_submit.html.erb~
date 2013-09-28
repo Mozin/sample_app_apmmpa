@@ -1,0 +1,2 @@
+  <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myFunction();',:id=> "game_submit_button" %>
+

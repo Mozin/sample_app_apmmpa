@@ -1,0 +1,2 @@
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myMafiaFunction();',:id=> "mafia_submit_button" %>
+

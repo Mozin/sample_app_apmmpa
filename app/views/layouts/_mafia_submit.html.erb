@@ -1,2 +1,15 @@
+<%= form_for @post,:remote=>true,:class=>"mafia_chat",:html => { :id => "mafia_mohsin_akshay_gavit_mafia_form" },:url=> {:action=> :create} do |f| %>
+  <div class="field">
+    <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_mafia_post"%>
+  </div>
+  <div id="mafia_post">
+  <script>
+  function myMafiaFunction()
+  {
+    document.getElementById("mafia_post").innerHTML='<%= f.hidden_field :place, :value=> "mafia_post"  %>';
+  }
+  </script>
+  </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myMafiaFunction();',:id=> "mafia_submit_button" %>
+<% end %>
 
