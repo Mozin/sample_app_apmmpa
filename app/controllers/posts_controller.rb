@@ -16,6 +16,10 @@ class PostsController < ApplicationController
   end
   
   def night_mode
+    @users=User.all
+    @users.each do |user|
+      user.update_attribute('mode_status',false)    
+    end
   end
 
   def deactivate
@@ -23,6 +27,10 @@ class PostsController < ApplicationController
   
   def day_mode
     @post= current_user.posts.build
+    @users=User.all
+    @users.each do |user|
+      user.update_attribute('mode_status',true)    
+    end
   end
   
   def talk_mafias

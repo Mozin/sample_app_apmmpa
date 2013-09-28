@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130922122503) do
+ActiveRecord::Schema.define(:version => 20130928145001) do
 
   create_table "posts", :force => true do |t|
     t.string   "content"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130922122503) do
     t.boolean  "game_join_status", :default => false
     t.string   "fake_name"
     t.string   "game_character"
+    t.boolean  "mode_status",      :default => true
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

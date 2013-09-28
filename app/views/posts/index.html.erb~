@@ -29,7 +29,7 @@
 </div>
 
 <% if current_user.admin? %>
-  <%=link_to "Deactivate",deactivate_mode_path,:confirm=> "You Really sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Deactivate",deactivate_path,:confirm=> "You Really sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
@@ -76,6 +76,7 @@ $(document).ready(function(){
 
   </ul>
 <div id="mafia_mohsin_akshay_gavit_mode_game" >
+<% if current_user.mode_status? %>
 <%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_game_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." ,:id=>"new_game_post" %>
@@ -89,6 +90,7 @@ $(document).ready(function(){
   </script>    
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myFunction();',:id=> "game_submit_button" %>
+<% end %>
 <% end %>
 </div>
 
@@ -106,6 +108,7 @@ $(document).ready(function(){
 
   </ul>
 <div id="mafia_mohsin_akshay_gavit_mode_mafia" >
+<% if current_user.mode_status? %>
 <%= form_for @post,:remote=>true,:class=>"mafia_chat",:html => { :id => "mafia_mohsin_akshay_gavit_mafia_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_mafia_post"%>
@@ -119,6 +122,7 @@ $(document).ready(function(){
   </script>
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myMafiaFunction();',:id=> "mafia_submit_button" %>
+<% end %>
 <% end %>
 </div>
 <% end %>
@@ -137,6 +141,7 @@ $(document).ready(function(){
 
   </ul>
 <div id="mafia_mohsin_akshay_gavit_mode_don" >
+<% if current_user.mode_status? %>
 <%= form_for @post,:remote=>true,:class=>"don_chat",:html => { :id => "mafia_mohsin_akshay_gavit_don_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_don_post"%>
@@ -150,6 +155,7 @@ $(document).ready(function(){
   </script>
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDonFunction();', :id=> "don_submit_button" %>
+<% end %>
 <% end %>
 </div>
 <% end %>
@@ -169,6 +175,7 @@ $(document).ready(function(){
 
   </ul>
 <div id="mafia_mohsin_akshay_gavit_mode_doctor" >
+<% if current_user.mode_status? %>
 <%= form_for @post,:remote=>true,:class=>"doctor_chat",:html => { :id => "mafia_mohsin_akshay_gavit_doctor_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=> 3, :placeholder=> "compose new post..." ,:id=>"new_doctor_post"%>
@@ -182,6 +189,7 @@ $(document).ready(function(){
   </script>
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();',:id=> "doctor_submit_button" %>
+<% end %>
 <% end %>
 </div>
 <% end %>

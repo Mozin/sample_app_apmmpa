@@ -10,7 +10,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password , :password_confirmation, :fake_name, :game_character
+  attr_accessible :email, :name, :password , :password_confirmation, :fake_name, :game_character,:mode_status
   has_secure_password
   has_many :posts,:dependent=> :destroy
   before_save {|user| user.email =email.downcase}
