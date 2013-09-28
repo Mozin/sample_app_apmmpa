@@ -2,6 +2,7 @@
 <div id="mafia_mohsin_akshay_gavit_mode_button">
 <% if current_user.admin? %>
   <%=link_to "Night mode",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Day mode",day_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 </div>
 <div id="mafia_mohsin_akshay_gavit_mode_button_mafia">
