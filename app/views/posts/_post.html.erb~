@@ -3,6 +3,6 @@
      <%= post.user.fake_name %>
    <% else %>
      <%= post.user.name %>
-    <%= post.content %>
    <% end %>
+    <%= post.content %>
 </li>

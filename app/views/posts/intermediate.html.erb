@@ -1,4 +1,17 @@
 <% if signed_in? %>	
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+  </script>
+<script>
+$(document).ready(function(){
+  $("#new_before_game_post").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#before_game_submit_button").click();
+    }
+  });
+});
+</script>
+
 <ul id="users">
 <% @users.each do |user|%>
  <% if user.game_join_status? %> 
@@ -24,7 +37,7 @@
 
 <%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_before_game_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
-    <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." %>
+    <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post...",:id=>"new_before_game_post" %>
   </div>
   <div id="before_game_post">
   <script>
@@ -34,7 +47,7 @@
   }
   </script>    
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myBeforeGameFunction();' %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myBeforeGameFunction();' ,:id=> "before_game_submit_button" %>
 <% end %>
 
 <% if current_user.admin? && !current_user.fake_name %>

@@ -1,13 +1,34 @@
 <% if signed_in? %>	
+<%= request.original_url %>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
   </script>
 <script>
 $(document).ready(function(){
-$("#new_mafia_post").keyup(function(event){
+  $("#new_mafia_post").keyup(function(event){
     if(event.keyCode == 13){
-        $("#id_of_button").click();
+        $("#mafia_submit_button").click();
     }
-});
+  });
+  $("#new_don_post").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#don_submit_button").click();
+    }
+  });
+  $("#new_game_post").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#game_submit_button").click();
+    }
+  });
+  $("#new_doctor_post").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#doctor_submit_button").click();
+    }
+  });
+  $("#new_police_post").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#police_submit_button").click();
+    }
+  });  
 });
 </script>
 
@@ -26,7 +47,7 @@ $("#new_mafia_post").keyup(function(event){
 
 <%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_game_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
-    <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." %>
+    <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." ,:id=>"new_game_post" %>
   </div>
   <div id="game_post">
   <script>
@@ -36,7 +57,7 @@ $("#new_mafia_post").keyup(function(event){
   }
   </script>    
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myFunction();' %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myFunction();',:id=> "game_submit_button" %>
 <% end %>
 
 <% if current_user.admin? || current_user.game_character=="mafia" %>
@@ -93,7 +114,7 @@ $("#new_mafia_post").keyup(function(event){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDonFunction();' %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDonFunction();', :id=> "don_submit_button" %>
 <% end %>
 <% end %>
 
@@ -123,7 +144,7 @@ $("#new_mafia_post").keyup(function(event){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();' %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myDoctorFunction();',:id=> "doctor_submit_button" %>
 <% end %>
 <% end %>
 
@@ -153,7 +174,7 @@ $("#new_mafia_post").keyup(function(event){
   }
   </script>
   </div>
-  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();' %>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary",:onclick=> 'myPoliceFunction();',:id=> "police_submit_button" %>
 <% end %>
 <% end %>
 
