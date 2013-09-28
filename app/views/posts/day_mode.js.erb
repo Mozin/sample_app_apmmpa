@@ -1,5 +1,5 @@
 <% broadcast "/messages/new" do %>
-    $("#mafia_mohsin_akshay_gavit_mode_button").html("<%= escape_javascript render('posts/night_mode') %>");
+    $("#mafia_mohsin_akshay_gavit_mode_button").html("<%= escape_javascript render('layouts/night_mode') %>");
     $("#mafia_mohsin_akshay_gavit_mode_game").html("<%= escape_javascript render('posts/game_submit') %>");
     $("#mafia_mohsin_akshay_gavit_mode_mafia").html("<%= escape_javascript render('posts/mafia_submit') %>");
     $("#mafia_mohsin_akshay_gavit_mode_don").html("<%= escape_javascript render('posts/don_submit') %>");
