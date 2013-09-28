@@ -48,7 +48,6 @@ $(document).ready(function(){
 
   </ul>
 
-
 <%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_game_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." ,:id=>"new_game_post" %>
@@ -61,8 +60,10 @@ $(document).ready(function(){
   }
   </script>    
   </div>
+<div id="mafia_mohsin_akshay_gavit_mode_game" >
   <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myFunction();',:id=> "game_submit_button" %>
 <% end %>
+</div>
 
 <% if current_user.admin? || current_user.game_character=="mafia" %>
 <h1>Mafia Post </h1>

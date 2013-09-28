@@ -1,7 +1,7 @@
 <% if signed_in? %>	
 <div id="mafia_mohsin_akshay_gavit_mode_button">
 <% if current_user.admin? %>
-  <%=link_to "Night mode",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>post,:class=> "btn btn-large btn-primary" %>
+  <%=link_to "Night mode",night_mode_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 </div>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
   </ul>
 
-
+<div id="mafia_mohsin_akshay_gavit_mode_game" >
 <%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_game_form" },:url=> {:action=> :create} do |f| %>
   <div class="field">
     <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." ,:id=>"new_game_post" %>
@@ -63,6 +63,7 @@ $(document).ready(function(){
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myFunction();',:id=> "game_submit_button" %>
 <% end %>
+</div>
 
 <% if current_user.admin? || current_user.game_character=="mafia" %>
 <h1>Mafia Post </h1>
