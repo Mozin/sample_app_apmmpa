@@ -53,6 +53,7 @@ class PostsController < ApplicationController
     if signed_in?
       @post= current_user.posts.build
       @posts=posts
+      @users=User.all
     else
       redirect_to signin_path,:notice => "Please sign in to participate in the game"
     end  
