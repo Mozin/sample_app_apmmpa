@@ -43,7 +43,7 @@ All users
    <%= user.fake_name %>
    <%= user.game_character %>
   <% if current_user.admin? && !current_user?(user) %>
-   | <%= link_to "delete",user,:method=>:delete,:confirm=> "You sure?" %> | 
+   | <%= link_to "delete",user,:method=>:delete,:confirm=> "You sure?" %> | <%= user.email %> | 
     <% if user.live_status? %>
       <%= link_to "kill",change_user_path(user) ,:method=> :put,:confirm=> "You sure?" %>
     <% end %>
@@ -52,6 +52,8 @@ All users
 <% end %>
 </ul>
 
+<div id="mafia_mohsin_akshay_gavit_status_update">
+</div>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
   </script>

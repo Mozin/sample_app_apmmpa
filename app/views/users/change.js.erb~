@@ -1,0 +1,3 @@
+<% broadcast "/messages/new" do %>
+   $("#mafia_mohsin_akshay_gavit_status_update").html("<%= escape_javascript render('posts/game_submit') %>");
+<% end %>

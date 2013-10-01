@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   def change
     user=User.find(params[:id])
     user.toggle!(:live_status)
-    redirect_to posts_path
+    user.update_attribute('fake_name',nil)
   end
     
   def show
