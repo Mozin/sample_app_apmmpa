@@ -51,6 +51,11 @@ class UsersController < ApplicationController
     user=User.find(params[:id])
     user.toggle!(:live_status)
     user.update_attribute('fake_name',nil)
+    redirect_to (status_update_path(:id=>params[:id]),:method=>:post,:remote=>true)
+  end
+
+  def status_update
+    user=User.find(params[:id])
     respond_to do |format|
       format.js
     end

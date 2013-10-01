@@ -22,7 +22,7 @@ SampleApp::Application.routes.draw do
   match "/talk_police" ,:to=>'posts#talk_police'
   match "/talk_don" ,:to=>'posts#talk_don'
   match "/talk_doc" ,:to=>'posts#talk_doc'
-  
+  match "/deactivate" ,:to=>'posts#deactivate'  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
