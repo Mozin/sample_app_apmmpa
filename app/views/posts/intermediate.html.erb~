@@ -68,7 +68,10 @@ $(document).ready(function(){
   });
 });
 </script>
-
+<div id="popup_box">	<!-- OUR PopupBox DIV-->
+	<h1>This IS A Cool PopUp</h1>
+	<a id="popupBoxClose">Close</a>	
+</div>
 <ul id="users">
 <% @users.each do |user|%>
  <% if user.game_join_status? %> 
