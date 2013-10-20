@@ -22,7 +22,6 @@ class UsersController < ApplicationController
       end
     end
    sign_in User.find(params[:id])
-   redirect_to posts_path
   end
     
   def create 
@@ -51,7 +50,7 @@ class UsersController < ApplicationController
     user=User.find(params[:id])
     user.toggle!(:live_status)
     user.update_attribute('fake_name',nil)
-    redirect_to (status_update_path(:id=>params[:id],:method=>:post,:remote=>true))
+    redirect_to posts_path
   end
     
   def show

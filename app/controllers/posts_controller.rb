@@ -33,11 +33,6 @@ class PostsController < ApplicationController
     end
   end
   
-  def status_update
-    respond_to do |format|
-      format.js
-    end
-  end
   
   def talk_mafias
     @post= current_user.posts.build
