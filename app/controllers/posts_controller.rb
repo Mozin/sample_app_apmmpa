@@ -25,6 +25,9 @@ class PostsController < ApplicationController
   def deactivate
   end
   
+  def notify
+  end
+  
   def day_mode
     @post= current_user.posts.build
     @users=User.all

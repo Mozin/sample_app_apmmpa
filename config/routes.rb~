@@ -23,7 +23,8 @@ SampleApp::Application.routes.draw do
   match "/talk_don" ,:to=>'posts#talk_don'
   match "/talk_doc" ,:to=>'posts#talk_doc'
   match "/deactivate" ,:to=>'posts#deactivate'  
-  match "/status_update" ,:to=>'posts#status_update'  
+  match "/status_update" ,:to=>'posts#status_update'
+  match "/notify" ,:to => 'users#notify'  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

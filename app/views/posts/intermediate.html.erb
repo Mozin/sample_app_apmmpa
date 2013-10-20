@@ -57,6 +57,8 @@ $(document).ready(function(){
 
 <% if current_user.admin? %>
   <%=link_to "Allocate Users", allocate_user_path(current_user),:method=> :put,:confirm=> "You sure?", :class=> "btn btn-large btn-primary" %>
+  <%=link_to "Notify", notify_path,:remote=>true,:method=>:post, :class=> "btn btn-large btn-primary" %>
+  
 <% end %>
 
 <% end %>

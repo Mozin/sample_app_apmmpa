@@ -22,12 +22,8 @@ class UsersController < ApplicationController
       end
     end
    sign_in User.find(params[:id])
-   redirect_to notify_path(:remote=> true),:format=> 'js'
   end
-    
-  def notify
-  end
-    
+        
   def create 
     @user=User.new(params[:user])
     if @user.save
