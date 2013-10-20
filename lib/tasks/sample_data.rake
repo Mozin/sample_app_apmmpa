@@ -5,7 +5,7 @@ namespace :db do
     admin.toggle!(:admin)
     
     User.create!(:name=>"Example User",:email=>"example@gmail.com",:password=>"mohsin",:password_confirmation=>"mohsin")
-    99.times do |n|
+    19.times do |n|
       name=Faker::Name.name
       email="example-#{n+1}@gmail.com"
       password="password"
