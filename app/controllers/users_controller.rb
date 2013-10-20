@@ -26,9 +26,6 @@ class UsersController < ApplicationController
   end
     
   def notify
-    respond_to do |format|
-      format.js
-    end
   end
     
   def create 
