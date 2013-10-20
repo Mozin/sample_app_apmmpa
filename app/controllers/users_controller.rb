@@ -22,10 +22,13 @@ class UsersController < ApplicationController
       end
     end
    sign_in User.find(params[:id])
-   redirect_to notify_path
+   redirect_to notify_path(:remote=> true)
   end
     
   def notify
+    respond_to do |format|
+      format.js
+    end
   end
     
   def create 

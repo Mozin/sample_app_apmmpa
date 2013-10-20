@@ -50,7 +50,7 @@ $(document).ready(function(){
   <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myBeforeGameFunction();' ,:id=> "before_game_submit_button" %>
 <% end %>
 
-<% if current_user.admin? && !current_user.fake_name %>
+<% if current_user.admin? %>
   <%=link_to "Allocate Users", allocate_user_path(current_user),:method=> :put,:confirm=> "You sure?", :class=> "btn btn-large btn-primary" %>
 <% end %>
 

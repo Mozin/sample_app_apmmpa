@@ -1,5 +1,6 @@
 <% broadcast "/messages/new" do %>
 			$('#popup_box').fadeIn("slow");
 			$('<div></div>').prependTo('body').attr('id', 'overlay');		}
+
 <% end %>
 
