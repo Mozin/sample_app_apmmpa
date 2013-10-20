@@ -22,6 +22,7 @@ class UsersController < ApplicationController
       end
     end
    sign_in User.find(params[:id])
+   redirect_to posts_path
   end
     
   def create 
