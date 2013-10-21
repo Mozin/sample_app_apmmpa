@@ -27,12 +27,18 @@ class PostsController < ApplicationController
   
   def notify
   end
-  
+    
   def day_mode
     @post= current_user.posts.build
     @users=User.all
     @users.each do |user|
       user.update_attribute('mode_status',true)    
+    end
+    @users_dead=[]
+    User.all.each do |user|
+      if !user.live_status? && !user.last_words?
+        @users_dead.push(user)
+      end  
     end
   end
   

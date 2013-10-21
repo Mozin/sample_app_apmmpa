@@ -48,7 +48,7 @@
 </div>
 <div id="popup_box">	<!-- OUR PopupBox DIV-->
 	<h1>This IS A Cool PopUp</h1>
-	<a id="popupBoxClose">Close</a>	
+	<%= link_to "game", posts_path %>
 </div>
 </body>
 </html>

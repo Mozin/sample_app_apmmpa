@@ -33,6 +33,7 @@
   <%=link_to "Deactivate",deactivate_path,:confirm=> "You Really sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 
+
 <h1>
 All users
 </h1>
@@ -82,6 +83,11 @@ $(document).ready(function(){
   $("#new_police_post").keyup(function(event){
     if(event.keyCode == 13){
         $("#police_submit_button").click();
+    }
+  });  
+  $("#new_last_words_post").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#last_words_submit_button").click();
     }
   });  
 });
@@ -246,6 +252,38 @@ $(document).ready(function(){
 <% end %>
 </div>
 <% end %>
+
+<h1>Last Words </h1>
+
+  <ul id="mafia_mohsin_akshay_gavit_last_words">
+  <% @posts.each do |post|%>
+  <% if post.place=="last_words" %>
+  <li>
+    <%= post.user.fake_name %>
+    <%= post.content %>
+    </li>
+  <% end %>
+  <% end %>
+
+  </ul>
+<div id="mafia_mohsin_akshay_gavit_mode_last_words" >
+<% if !current_user.live_status? && !current_user.last_words? %>
+<%= form_for @post,:remote=>true,:html => { :id => "mafia_mohsin_akshay_gavit_last_words_form" },:url=> {:action=> :create} do |f| %>
+  <div class="field">
+    <%= f.text_area :content,:rows=>3, :placeholder=> "compose new post..." ,:id=>"new_last_words_post" %>
+  </div>
+  <div id="last_words_post">
+  <script>
+  function myLastWordsFunction()
+  {
+    document.getElementById("last_words_post").innerHTML='<%= f.hidden_field :place, :value=> "last_words_post"  %>';
+  }
+  </script>    
+  </div>
+  <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myLastWordsFunction();',:id=> "last_words_submit_button" %>
+<% end %>
+<% end %>
+</div>
 
 
 <% end %>

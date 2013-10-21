@@ -15,8 +15,10 @@ $(document).ready(function(){
         $("#before_game_submit_button").click();
     }
   });
+  $("body").append( '<div id="popup_box"><h1>You have been allocated names</h1>Join the game by pressing the link<%= link_to "game", posts_path %></div>' )
 });
 </script>
+
 <ul id="users">
 <% @users.each do |user|%>
  <% if user.game_join_status? %> 
@@ -57,7 +59,7 @@ $(document).ready(function(){
 
 <% if current_user.admin? %>
   <%=link_to "Allocate Users", allocate_user_path(current_user),:method=> :put,:confirm=> "You sure?", :class=> "btn btn-large btn-primary" %>
-  <%=link_to "Notify", notify_path,:remote=>true,:method=>post, :class=> "btn btn-large btn-primary" %>
+  <%=link_to "Notify", notify_path,:remote=>true,:method=>:post, :class=> "btn btn-large btn-primary" %>
   
 <% end %>
 

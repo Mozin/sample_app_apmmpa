@@ -15,8 +15,10 @@ $(document).ready(function(){
         $("#before_game_submit_button").click();
     }
   });
+  $("body").append( '<div id="popup_box"><h1>You have been allocated names</h1>Join the game by pressing the link<%= link_to "game", posts_path %></div>' );
 });
 </script>
+
 <ul id="users">
 <% @users.each do |user|%>
  <% if user.game_join_status? %> 
