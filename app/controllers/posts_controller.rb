@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     @users.each do |user|
       user.update_attribute('mode_status',true)    
     end
-    @usersdead=User.all
+    @usersdead=User.find(:all)
   end
     
   def talk_mafias
