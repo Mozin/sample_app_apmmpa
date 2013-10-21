@@ -53,6 +53,12 @@ class UsersController < ApplicationController
     user.update_attribute('fake_name',nil)
     redirect_to posts_path
   end
+  
+  def change_last_words_status
+    user=User.find(params[:id])  
+    user.update_attribute('last_words',true)
+    redirect_to posts_path        
+  end
     
   def show
     @user=User.find(params[:id])

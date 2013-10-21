@@ -33,12 +33,6 @@
   <%=link_to "Deactivate",deactivate_path,:confirm=> "You Really sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
 <% end %>
 
-<div id="mafia_mohsin_akshay_gavit_mode_button_notify">
-<% if current_user.admin? %>
-  <%=link_to "Notify",notify_game_path,:confirm=> "You sure?", :remote=>true,:method=>:post,:class=> "btn btn-large btn-primary" %>
-<% end %>
-</div>
-
 
 <h1>
 All users
@@ -288,6 +282,7 @@ $(document).ready(function(){
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myLastWordsFunction();',:id=> "last_words_submit_button" %>
 <% end %>
+<%= link_to 'End Last Words', last_words_end_path %>
 <% end %>
 </div>
 
