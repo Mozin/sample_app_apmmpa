@@ -125,7 +125,7 @@ h1,h2,h3,h4,h5,h6{
 
 #popup_box { 
 	display:none; /* Hide the DIV */
-	position:absolute;  
+	position:fixed;  
 	height:300px;  
 	width:600px;  
 	background:#FFFFFF;  
