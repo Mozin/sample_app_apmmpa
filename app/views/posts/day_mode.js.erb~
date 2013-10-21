@@ -4,7 +4,7 @@
     <ul>
       @users_dead.each do |user|
         <li><%= user.fake_name %></li>
-      <%end%>
+      <% end %>
     </ul><%= link_to 'Continue', posts_path %></div>" );
     $('#popup_box').fadeIn("slow");
     $('<div></div>').prependTo('body').attr('id', 'overlay');
