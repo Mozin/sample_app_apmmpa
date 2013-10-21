@@ -1,11 +1,11 @@
 <% broadcast "/messages/new" do %>
     $("#mafia_mohsin_akshay_gavit_mode_game").html("<%= escape_javascript render('posts/game_submit') %>");
-    $("body").append( '<div id="popup_box"><h1>Its Day Mode!</h1>The game starts with the following dead:
+    $("body").append( "<div id='popup_box'><h1>Its Day Mode!</h1>The game starts with the following dead:
     <ul>
       @users_dead.each do |user|
         <li><%= user.fake_name %></li>
-      end
-    </ul><%= link_to "Continue", posts_path %></div>' );
+      <%end%>
+    </ul><%= link_to 'Continue', posts_path %></div>" );
     $('#popup_box').fadeIn("slow");
     $('<div></div>').prependTo('body').attr('id', 'overlay');
 <% end %>
