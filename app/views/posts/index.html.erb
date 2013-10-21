@@ -283,7 +283,8 @@ $(document).ready(function(){
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myLastWordsFunction();',:id=> "last_words_submit_button" %>
 <% end %>
-<%= link_to 'End Last Words', change_last_words_status_user_path(current_user) ,:class=> "btn btn-large btn-primary %>
+<%= link_to 'End Last Words', change_last_words_status_user_path(current_user) ,:class=> "btn btn-large btn-primary" %>
+
 <% end %>
 </div>
 
