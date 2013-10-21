@@ -1,7 +1,7 @@
 <h1>Its Day Mode!</h1>The game starts with the following dead:
     <ul>
-      <% @users_dead.each do |user| %>
+      <% @users.each do |user| %>
         <li><%= user.fake_name %></li>
       <% end %>
-    </ul><%= link_to 'Continue', posts_path %>" );
+    </ul><%= link_to 'Continue', posts_path %>"
     

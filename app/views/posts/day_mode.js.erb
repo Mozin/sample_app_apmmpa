@@ -2,6 +2,6 @@
     $("#mafia_mohsin_akshay_gavit_mode_game").html("<%= escape_javascript render('posts/game_submit') %>");
     $("#popup_box").html("<%= escape_javascript render('posts/popup_box_data') %>");
     $('#popup_box').fadeIn("slow");
-    overlay = $('<div></div>').prependTo('body').attr('id', 'overlay');
+    $('<div></div>').prependTo('body').attr('id', 'overlay');
 <% end %>
 

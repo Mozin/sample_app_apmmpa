@@ -34,12 +34,6 @@ class PostsController < ApplicationController
     @users.each do |user|
       user.update_attribute('mode_status',true)    
     end
-    @users_dead=[]
-    @users.each do |user|
-      if !user.live_status? && !user.last_words?
-        @users_dead.push(user)
-      end  
-    end  
   end
     
   def talk_mafias
