@@ -17,6 +17,9 @@
   <% if @post.place=="police_post" %>
     $("#mafia_mohsin_akshay_gavit_chat_police").append("<%= escape_javascript render(@post) %>");
   <% end %>
+  <% if @post.place=="last_words_post" %>
+    $("#mafia_mohsin_akshay_gavit_last_words").append("<%= escape_javascript render(@post) %>");
+  <% end %>
 
 <% end %>
 
@@ -37,5 +40,8 @@
   <% end %>
   <% if @post.place=="police_post" %>
     $("#mafia_mohsin_akshay_gavit_police_form")[0].reset();
+  <% end %>
+  <% if @post.place=="last_words_post" %>
+    $("#mafia_mohsin_akshay_gavit_last_words_form")[0].reset();
   <% end %>
 

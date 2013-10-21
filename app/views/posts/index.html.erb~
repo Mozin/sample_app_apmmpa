@@ -89,7 +89,8 @@ $(document).ready(function(){
     if(event.keyCode == 13){
         $("#last_words_submit_button").click();
     }
-  });  
+  });
+ $("body").append( '<div id="popup_box"></div>' );    
 });
 </script>
 
@@ -257,7 +258,7 @@ $(document).ready(function(){
 
   <ul id="mafia_mohsin_akshay_gavit_last_words">
   <% @posts.each do |post|%>
-  <% if post.place=="last_words" %>
+  <% if post.place=="last_words_post" %>
   <li>
     <%= post.user.fake_name %>
     <%= post.content %>
@@ -282,7 +283,7 @@ $(document).ready(function(){
   </div>
   <%=f.submit "post",:class=>"btn btn-large btn-primary" ,:onclick=> 'myLastWordsFunction();',:id=> "last_words_submit_button" %>
 <% end %>
-<%= link_to 'End Last Words', change_last_words_status_user_path(current_user) %>
+<%= link_to 'End Last Words', change_last_words_status_user_path(current_user) ,:class=> "btn btn-large btn-primary%>
 <% end %>
 </div>
 
