@@ -35,8 +35,7 @@ class PostsController < ApplicationController
       user.update_attribute('mode_status',true)    
     end
   end
-  
-  
+    
   def talk_mafias
     @post= current_user.posts.build
   end
