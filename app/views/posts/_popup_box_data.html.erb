@@ -1,9 +1,7 @@
 <h1>Its Day Mode!</h1>The game starts with the following dead:
     <ul>
       <% @users.each do |user| %>
-        <% if !user.live_status? %>
           <li>The <%= user.fake_name %></li>
-        <% end %>  
       <% end %>
     </ul><%= link_to 'Continue', posts_path %>"
     
