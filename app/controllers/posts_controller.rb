@@ -34,7 +34,6 @@ class PostsController < ApplicationController
     @users.each do |user|
       user.update_attribute('mode_status',true)    
     end
-    @users=User.find(:all, :conditions => {:live_status => false,:last_words=> false})
   end
     
   def talk_mafias
